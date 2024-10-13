@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecommerce</title>
+    <link rel="stylesheet" href="/staticfiles/style.css">
+</head>
+<body>
+    <form action="{{url_for('predict')}}" method="post">
+        
+        <input type="text" name="Tenure" id="tenure" placeholder="Customer Tenure (months)">
+        <input type="text" name="WarehouseToHome" id="warehouse" placeholder="Distance Warehouse to Home (km)">
+        <input type="text" name="HourSpendOnApp" id="hours" placeholder="Hours Spent on App per Day">
+        <input type="text" name="NumberOfDeviceRegistered" id="devices" placeholder="Number of Devices Registered">
+        <input type="text" name="SatisfactionScore" id="satisfaction" placeholder="Satisfaction Score">
+        <input type="text" name="NumberOfAddress" id="addresses" placeholder="Number of Addresses">
+        <input type="text" name="OrderAmountHikeFromlastYear" id="orderHike" placeholder="Order Amount Hike From Last Year (%)">
+        <input type="text" name="CouponUsed" id="couponUsed" placeholder="Number of Coupons Used">
+        <input type="text" name="OrderCount" id="orderCount" placeholder="Total Order Count">
+        <input type="text" name="DaySinceLastOrder" id="daysSinceOrder" placeholder="Days Since Last Order">
+        <input type="text" name="CashbackAmount" id="cashback" placeholder="Total Cashback Amount">
+
+        <h3> Preferred Login Device </h3>
+        <select name="PreferredLoginDevice" id="loginDevice">
+            <option value="Mobile">Mobile</option>
+            <option value="Desktop">Desktop</option>
+        </select>
+
+        <h3> Preferred Payment Mode </h3>
+        <select name="PreferredPaymentMode" id="paymentMode">
+            <option value="Credit Card">Credit Card</option>
+            <option value="Debit Card">Debit Card</option>
+            <option value="Net Banking">Net Banking</option>
+            <option value="Wallet">Wallet</option>
+            <option value="UPI">UPI</option>
+            <option value="Cash on Delivery">Cash on Delivery</option>
+        </select>
+
+        <h3> Gender </h3>
+        <select name="Gender" id="gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <h3> Preferred Order Category </h3>
+        <select name="PreferedOrderCat" id="orderCat">
+            <option value="Electronics">Electronics</option>
+            <option value="Fashion">Fashion</option>
+            <option value="Groceries">Groceries</option>
+            <option value="Home Decor">Home Decor</option>
+            <option value="Books">Books</option>
+            <option value="Others">Others</option>
+        </select>
+
+        <h3> Marital Status </h3>
+        <select name="MaritalStatus" id="maritalStatus">
+            <option value="Single">Single</option>
+            <option value="Married">Married</option>
+            <option value="Divorced">Divorced</option>
+        </select>
+
+        <h3> City Tier </h3>
+        <select name="CityTier" id="cityTier">
+            <option value="1">Tier 1</option>
+            <option value="2">Tier 2</option>
+            <option value="3">Tier 3</option>
+        </select>
+
+        <h3> Complain </h3>
+        <select name="Complain" id="complain">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select>
+
+        <br><br>
+        <button type="submit" id="sub">Prediction</button>
+
+    </form>
+
+    <br><br>
+    {{prediction_text}}
+</body>
+</html>
